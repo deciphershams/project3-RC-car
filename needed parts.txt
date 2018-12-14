@@ -1,0 +1,10 @@
+1- raspberry pi 3B
+2- raspberry pi camera
+3- 2 wheel drive robot
+4- male to male and male to female jumbers (10 each)
+5- L293D H-bridge
+6- ethernet cable
+8- SD card with minimum 8GB size
+9- 2 small size breadboards
+10- powerbank
+11- adaptor 5v 2A for initial testing

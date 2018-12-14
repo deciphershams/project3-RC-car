@@ -1,0 +1,40 @@
+1-sudo apt-get update
+2-sudo apt-get upgrade
+3-sudo rpi-update
+4-sudo apt-get install build-essential cmake pkg-config
+5-sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+6-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+7-sudo apt-get install libxvidcore-dev libx264-dev
+8-sudo apt-get install libgtk2.0-dev libgtk-3-dev
+9-sudo apt-get install libatlas-base-dev gfortran
+10-sudo apt-get install python3 python3-setuptools python3-dev
+11-wget https://bootstrap.pypa.io/get-pip.py
+12-sudo python3 get-pip.py
+13-cd ~
+14-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
+15-wget -O opencv_contrib.zip -https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
+17-unzip opencv.zip
+18-unzip opencv_contrib.zip
+19-sudo pip3 install numpy
+20-cd ~/opencv-3.4.1/
+21-mkdir build
+22-cd build
+23-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules \
+      -D ENABLE_PRECOMPILED_HEADERS=OFF \
+      -D BUILD_EXAMPLES=ON ..
+24-sudo /etc/init.d/dphys-swapfile stop
+25-sudo /etc/init.d/dphys-swapfile start
+26-make -j4
+27-sudo make install
+28-sudo ldconfig
+29-import cv2
+30-cv2.__version__
+31-cd ~                                 
+32-rm -rf opencv.zip opencv_contrib.zip
+
+Credit goes to 
+https://www.deciphertechnic.com/install-opencv-python-on-raspberry-pi/
+note: go to the site as an important step while setup is need as you go to terminal of raspberry pi and -nano/etc/dphys-swapfile    and at CONF_SWAPSIZE you change it to 1024 before setup and back to 100 after setup
